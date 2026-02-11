@@ -11,7 +11,6 @@
     "colyseus": "^0.15.55",
     "@colyseus/core": "^0.15.55",
     "@colyseus/ws-transport": "^0.15.25",
-    "@colyseus/monitor": "^0.15.14",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
