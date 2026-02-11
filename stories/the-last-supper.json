@@ -1,0 +1,438 @@
+{
+  "id": "the-last-supper",
+  "title": "The Last Supper",
+  "genre": "Murder Mystery",
+  "description": "A lavish dinner party turns deadly when the host drops dead at the table. One of the guests is a killer — but who? Search for clues, interrogate suspects, and vote to accuse. Choose wrong, and the killer escapes into the night.",
+  "estimatedMinutes": 18,
+  "minPlayers": 2,
+  "maxPlayers": 16,
+  "startNodeId": "intro",
+  "nodes": {
+    "intro": {
+      "id": "intro",
+      "type": "narrative",
+      "title": "A Night to Die For",
+      "narration": "Rain hammers the windows of Blackwood Manor as six guests gather for the dinner party of the season. Your host, the eccentric billionaire Victor Blackwood, has promised an evening none of you will ever forget.\n\nThe dining room glitters with candlelight. Crystal glasses clink. Laughter echoes off oil paintings worth more than most houses.\n\nThen Victor raises his glass for a toast. \"To secrets,\" he says with a wicked smile. \"May they never—\"\n\nHis eyes go wide. The glass slips from his fingers and shatters on the marble floor. Victor Blackwood collapses face-first into his soup.\n\nHe's dead.\n\nThe lights flicker. The front door slams shut — locked from the outside. Someone at this table is a murderer. And no one is leaving until you figure out who.",
+      "sceneDescription": "A dark, opulent dining room in a Gothic manor. A chandelier with dripping candles. A long table set with silver and crystal. A man slumped face-down in his soup. Rain streaking the tall windows. Six shocked dinner guests.",
+      "choices": [
+        {
+          "id": "examine-body",
+          "emoji": "🔍",
+          "label": "Examine Victor's body for clues",
+          "nextNodeId": "examine-body"
+        },
+        {
+          "id": "question-guests",
+          "emoji": "🗣️",
+          "label": "Immediately question the guests",
+          "nextNodeId": "question-guests"
+        },
+        {
+          "id": "check-wine",
+          "emoji": "🍷",
+          "label": "Inspect the wine and food",
+          "nextNodeId": "check-wine"
+        }
+      ]
+    },
+
+    "examine-body": {
+      "id": "examine-body",
+      "type": "narrative",
+      "title": "The Body Tells a Story",
+      "narration": "You lean over Victor's body. His lips are tinged blue — a telltale sign of poisoning. But there's something else: a small puncture wound on his neck, barely visible beneath his collar. Like a needle prick.\n\nIn his clenched fist, you find a crumpled note: \"I know what you did in Geneva. Tonight, everyone will too.\"\n\nThe butler, Mr. Crane, appears at the doorway. \"I've called the police, but the storm has knocked out the roads. They can't reach us until morning.\" His voice is steady, but his hands are trembling.\n\nYou notice a faint smell — almonds. Classic cyanide. But the needle mark suggests something more sophisticated.",
+      "sceneDescription": "Close-up of a dead man's face, blue-tinged lips, in an opulent dining setting. A crumpled note visible in his hand. A butler standing in the doorway.",
+      "choices": [
+        {
+          "id": "investigate-needle",
+          "emoji": "💉",
+          "label": "Focus on the needle mark — someone injected him",
+          "nextNodeId": "needle-path"
+        },
+        {
+          "id": "read-note",
+          "emoji": "📝",
+          "label": "Ask about Geneva — what was Victor hiding?",
+          "nextNodeId": "geneva-secret"
+        }
+      ]
+    },
+
+    "question-guests": {
+      "id": "question-guests",
+      "type": "narrative",
+      "title": "Faces Around the Table",
+      "narration": "You scan the faces of the remaining guests, each one frozen in a different shade of shock — or is it performance?\n\n**Dr. Elena Vasquez** — Victor's personal physician, clutching her medical bag. She arrived late tonight.\n\n**Marcus Chen** — Victor's business partner, who just last week was threatening a lawsuit over missing funds.\n\n**Lady Catherine Ashworth** — Victor's ex-wife, wearing a diamond necklace he reportedly demanded back in the divorce.\n\n**Professor James Whitfield** — Victor's old university friend, who hasn't been seen in public for two years.\n\n**Sophia Blackwood** — Victor's estranged daughter, invited tonight for the first time in years.\n\n\"Nobody leaves this room,\" you announce. Eyes dart. Someone swallows hard.",
+      "sceneDescription": "Five suspicious dinner guests at a long candlelit table. Each with distinct appearances — a doctor, a businessman, an aristocratic woman, a professor, and a young woman. Shadows and candlelight creating dramatic lighting.",
+      "choices": [
+        {
+          "id": "question-elena",
+          "emoji": "👩‍⚕️",
+          "label": "Interrogate Dr. Vasquez — she had medical access",
+          "nextNodeId": "elena-interrogation"
+        },
+        {
+          "id": "question-marcus",
+          "emoji": "💰",
+          "label": "Confront Marcus — follow the money",
+          "nextNodeId": "marcus-interrogation"
+        },
+        {
+          "id": "question-sophia",
+          "emoji": "👧",
+          "label": "Talk to Sophia — why the reunion tonight?",
+          "nextNodeId": "sophia-interrogation"
+        }
+      ]
+    },
+
+    "check-wine": {
+      "id": "check-wine",
+      "type": "narrative",
+      "title": "A Bitter Vintage",
+      "narration": "You carefully examine the table. Victor's wine glass lies shattered on the floor, but a residue remains on the tablecloth — slightly cloudy, with a faint almond scent.\n\nInteresting. Everyone was served from the same bottle of 1982 Château Margaux. But Victor's glass has a different residue than the others.\n\nThe sommelier's station reveals something troubling: a second, identical wine glass, tucked behind the decanter. Someone swapped Victor's glass before dinner.\n\nLady Catherine speaks up: \"Victor always insisted on his special glass — the one with the gold rim. Anyone who knew him would know which glass was his.\"\n\nThat narrows it to someone who knew Victor well.",
+      "sceneDescription": "A wine glass shattered on a marble floor with dark residue. An elegant wine service station with decanters. A hidden duplicate glass being discovered.",
+      "choices": [
+        {
+          "id": "fingerprint-glass",
+          "emoji": "🖐️",
+          "label": "Check the hidden glass for fingerprints",
+          "nextNodeId": "fingerprint-reveal"
+        },
+        {
+          "id": "sommelier",
+          "emoji": "🍾",
+          "label": "Question the sommelier about who was near the wine",
+          "nextNodeId": "sommelier-testimony"
+        }
+      ]
+    },
+
+    "needle-path": {
+      "id": "needle-path",
+      "type": "narrative",
+      "title": "The Doctor's Dilemma",
+      "narration": "A needle mark means a syringe. And there's only one person at this dinner who would logically carry one.\n\nDr. Elena Vasquez goes pale when you point this out. \"I'm his doctor! Of course I carry medical supplies. Victor was diabetic — I always have insulin on hand.\"\n\nBut when you ask to see her bag, she hesitates. Inside, you find insulin vials, syringes... and one empty vial with no label.\n\n\"That's not mine,\" she says quickly. \"Someone must have planted it.\"\n\nProfessor Whitfield clears his throat. \"Actually, I saw Dr. Vasquez near Victor just before the toast. She was adjusting his collar, she said.\"",
+      "sceneDescription": "A doctor's medical bag open on a table, showing syringes and vials. One empty unlabeled vial highlighted. A nervous-looking female doctor in the background.",
+      "choices": [
+        {
+          "id": "accuse-elena",
+          "emoji": "⚖️",
+          "label": "Accuse Dr. Vasquez — the evidence is clear",
+          "nextNodeId": "accuse-elena"
+        },
+        {
+          "id": "planted-evidence",
+          "emoji": "🤔",
+          "label": "Someone planted it — but who and when?",
+          "nextNodeId": "planted-evidence"
+        }
+      ]
+    },
+
+    "geneva-secret": {
+      "id": "geneva-secret",
+      "type": "narrative",
+      "title": "The Geneva Connection",
+      "narration": "The mention of Geneva sends a visible ripple through the room. Marcus Chen loosens his tie. Professor Whitfield stares at his plate.\n\nSophia Blackwood breaks the silence. \"My father ran a secret pharmaceutical trial in Geneva, fifteen years ago. People died. He covered it up and used the profits to build his empire.\"\n\n\"That's a lie!\" Marcus snaps.\n\n\"Is it?\" Sophia pulls a USB drive from her clutch purse. \"He was going to expose everything tonight. This was supposed to be his confession dinner. Everyone at this table is connected to Geneva.\"\n\nSuddenly, the lights go out. When they come back on three seconds later, the USB drive is gone from Sophia's hand.",
+      "sceneDescription": "A darkened dining room during a power flicker. A young woman holding a USB drive. Other guests looking shocked and angry. Dramatic shadows.",
+      "choices": [
+        {
+          "id": "search-everyone",
+          "emoji": "🔦",
+          "label": "Search everyone — someone grabbed that drive",
+          "nextNodeId": "search-scene"
+        },
+        {
+          "id": "who-benefits",
+          "emoji": "🧠",
+          "label": "Think: who benefits most from the cover-up?",
+          "nextNodeId": "motive-analysis"
+        }
+      ]
+    },
+
+    "elena-interrogation": {
+      "id": "elena-interrogation",
+      "type": "narrative",
+      "title": "Under the Microscope",
+      "narration": "Dr. Vasquez maintains steady eye contact. Professional. Controlled.\n\n\"Victor was my patient for twelve years. He was more than that — he was funding my research into rare blood diseases. Why would I kill the man keeping my life's work alive?\"\n\nBut when pressed about her late arrival, cracks appear. \"There was traffic... the storm...\" She glances at the butler, who shakes his head almost imperceptibly.\n\nMarcus interrupts: \"Tell them about the argument, Elena. I heard you on the phone in the library before dinner. You were furious.\"\n\nElena's composure cracks. \"He was going to cut my funding. Redirect it to some vanity project. Twenty years of research, gone.\" She catches herself. \"But I didn't kill him.\"",
+      "sceneDescription": "An intense close-up interrogation scene at a candlelit dinner table. A composed woman beginning to show cracks in her composure.",
+      "choices": [
+        {
+          "id": "funding-motive",
+          "emoji": "💊",
+          "label": "She had motive AND means — press harder",
+          "nextNodeId": "needle-path"
+        },
+        {
+          "id": "butler-signal",
+          "emoji": "🎩",
+          "label": "What was that look from the butler?",
+          "nextNodeId": "butler-secret"
+        }
+      ]
+    },
+
+    "marcus-interrogation": {
+      "id": "marcus-interrogation",
+      "type": "narrative",
+      "title": "Following the Money",
+      "narration": "Marcus Chen is sweating, though the manor is cold. \"Yes, I was suing Victor. He embezzled $30 million from our joint venture. But killing him doesn't get my money back — it makes it harder to recover.\"\n\nHe's right. That's the logic of an innocent man... or a very clever guilty one.\n\n\"Besides,\" he continues, \"Victor changed his will last week. I know because his lawyer called me to gloat. Everything goes to Sophia now. Everything.\"\n\nSophia nearly drops her glass. \"What? I didn't know that.\"\n\n\"Convenient, isn't it?\" Marcus says coldly. \"The estranged daughter gets invited back AND inherits the fortune, all in the same week the old man dies.\"",
+      "sceneDescription": "A nervous businessman in an expensive suit, sweating, gesturing accusingly at a shocked young woman across a dinner table.",
+      "choices": [
+        {
+          "id": "sophia-suspect",
+          "emoji": "👧",
+          "label": "Sophia inherits everything? She's the prime suspect",
+          "nextNodeId": "sophia-interrogation"
+        },
+        {
+          "id": "lawyer-angle",
+          "emoji": "📋",
+          "label": "Who else knew about the will change?",
+          "nextNodeId": "butler-secret"
+        }
+      ]
+    },
+
+    "sophia-interrogation": {
+      "id": "sophia-interrogation",
+      "type": "narrative",
+      "title": "The Prodigal Daughter",
+      "narration": "Sophia Blackwood is the youngest person in the room and, right now, the most composed. \n\n\"My father and I haven't spoken in five years. He kicked me out when I confronted him about Geneva. Last week, he called me out of nowhere. Said he wanted to make things right.\"\n\nTears form but don't fall. \"He told me this dinner was about truth. About finally owning what he'd done. He wanted witnesses — that's why you're all here.\"\n\n\"So someone at this table killed him to keep Geneva buried,\" you say.\n\nSophia nods. \"And the only people who know what happened in Geneva are in this room. My father made sure of that.\"\n\nThe butler enters with a tray of coffee. His hands are perfectly steady now.",
+      "sceneDescription": "A young woman sitting upright and dignified at a dinner table, tears glistening but face strong. A butler entering with coffee in the background, suspiciously calm.",
+      "choices": [
+        {
+          "id": "trust-sophia",
+          "emoji": "🤝",
+          "label": "Sophia is telling the truth — focus on Geneva suspects",
+          "nextNodeId": "motive-analysis"
+        },
+        {
+          "id": "butler-coffee",
+          "emoji": "☕",
+          "label": "Wait — the butler's hands stopped shaking. Why?",
+          "nextNodeId": "butler-secret"
+        }
+      ]
+    },
+
+    "fingerprint-reveal": {
+      "id": "fingerprint-reveal",
+      "type": "narrative",
+      "title": "A Telling Touch",
+      "narration": "Using a candle flame and some soot (Professor Whitfield's suggestion — he watches too many crime shows), you dust the hidden glass.\n\nTwo sets of prints. One matches the butler's — expected, he set the table. The other is smaller, more delicate.\n\nLady Catherine calmly removes her gloves. \"Fine. Yes, I touched the glass. I noticed it behind the decanter and moved it, thinking it was out of place. That's hardly a crime.\"\n\n\"But you didn't mention it until now,\" Sophia says.\n\nCatherine's eyes narrow. \"I didn't think it mattered. Victor and I were married for fifteen years. I know that man's every habit, every weakness. If I wanted him dead, darling, I wouldn't be so sloppy.\"",
+      "sceneDescription": "A dramatic moment of fingerprint revelation by candlelight. An aristocratic woman removing silk gloves defiantly.",
+      "choices": [
+        {
+          "id": "accuse-catherine",
+          "emoji": "⚖️",
+          "label": "She handled the murder weapon — accuse Lady Catherine",
+          "nextNodeId": "accuse-catherine"
+        },
+        {
+          "id": "too-easy",
+          "emoji": "🎭",
+          "label": "It's too obvious — she's being framed",
+          "nextNodeId": "planted-evidence"
+        }
+      ]
+    },
+
+    "sommelier-testimony": {
+      "id": "sommelier-testimony",
+      "type": "narrative",
+      "title": "The Witness Below Stairs",
+      "narration": "The sommelier, a young man named Thomas, is found hiding in the wine cellar, pale and shaking.\n\n\"I saw someone near the wine station during the cocktail hour. They thought everyone was in the drawing room, but I was restocking. They switched the glass and added something from a small vial.\"\n\n\"Who?\" you demand.\n\nThomas swallows hard. \"I... I couldn't see their face. The lighting was behind them. But they were tall, and they moved like they knew the house. Like they'd been here a hundred times.\"\n\nThat description fits the butler, Marcus, or Professor Whitfield. But Thomas adds one more detail: \"They were humming. Some old classical piece. Beethoven, I think.\"",
+      "sceneDescription": "A terrified young sommelier in a dark wine cellar, being questioned by candlelight. Wine racks stretching into darkness behind him.",
+      "choices": [
+        {
+          "id": "beethoven-clue",
+          "emoji": "🎵",
+          "label": "Who here loves Beethoven? That's our killer.",
+          "nextNodeId": "motive-analysis"
+        },
+        {
+          "id": "thomas-hiding",
+          "emoji": "🤨",
+          "label": "Why was Thomas hiding? He might be the killer.",
+          "nextNodeId": "planted-evidence"
+        }
+      ]
+    },
+
+    "butler-secret": {
+      "id": "butler-secret",
+      "type": "narrative",
+      "title": "The Loyal Servant",
+      "narration": "You corner Mr. Crane in the pantry. Up close, you see his eyes are red. He's been crying.\n\n\"Thirty-two years,\" he says quietly. \"I've served this family for thirty-two years. Victor was... not a good man. But he was my employer. My responsibility.\"\n\nThen he makes a confession. \"Victor told me this morning that tonight would be his last dinner. I thought he was being dramatic. Now I realize — he knew. He knew someone would try to kill him.\"\n\n\"He set a trap?\"\n\n\"He set a stage. This dinner was carefully orchestrated. The guest list, the seating arrangement, even the wine selection — everything was chosen to force the truth out. Victor's final game.\"\n\nThe butler hands you a sealed envelope. \"He told me to give this to whoever started asking questions. I suppose that's you.\"",
+      "sceneDescription": "An elderly butler with red eyes in a dimly lit pantry, handing over a sealed envelope. Emotional and secretive atmosphere.",
+      "choices": [
+        {
+          "id": "open-envelope",
+          "emoji": "✉️",
+          "label": "Open the envelope",
+          "nextNodeId": "final-revelation"
+        },
+        {
+          "id": "confront-table",
+          "emoji": "👥",
+          "label": "Bring the envelope to the table — open it in front of everyone",
+          "nextNodeId": "final-revelation"
+        }
+      ]
+    },
+
+    "planted-evidence": {
+      "id": "planted-evidence",
+      "type": "narrative",
+      "title": "A Deeper Game",
+      "narration": "Something doesn't add up. The clues are too clean, too perfectly arranged. The needle mark AND the poisoned glass? That's two murder methods — overkill, literally.\n\nUnless... the obvious evidence is meant to frame someone. The real killer is smarter than this.\n\nYou step back and think. Who has been quiet tonight? Who has been subtly pointing fingers while appearing innocent?\n\nProfessor Whitfield. He \"helpfully\" suggested checking fingerprints. He mentioned seeing Dr. Vasquez near Victor. He's been steering this investigation from the shadows.\n\nBut Whitfield has an alibi — Lady Catherine says they were in the library together during cocktails. Unless she's covering for him. Unless they're working together.",
+      "sceneDescription": "A pensive scene of deduction. A wall of clues being mentally mapped out with red string connections. A professor in the background looking suspiciously calm.",
+      "choices": [
+        {
+          "id": "accuse-whitfield",
+          "emoji": "⚖️",
+          "label": "Accuse Professor Whitfield — he's been manipulating us",
+          "nextNodeId": "accuse-whitfield"
+        },
+        {
+          "id": "conspiracy",
+          "emoji": "🕸️",
+          "label": "Whitfield and Catherine are in it together",
+          "nextNodeId": "accuse-both"
+        },
+        {
+          "id": "find-more",
+          "emoji": "🔍",
+          "label": "Need more proof — check the butler's envelope",
+          "nextNodeId": "butler-secret"
+        }
+      ]
+    },
+
+    "search-scene": {
+      "id": "search-scene",
+      "type": "narrative",
+      "title": "Pat Down",
+      "narration": "You demand everyone empty their pockets and bags. The guests reluctantly comply.\n\nDr. Vasquez: medical bag, phone, car keys.\nMarcus: wallet, phone, business cards, breath mints.\nLady Catherine: diamond earrings, lipstick, a small flask of brandy.\nProfessor Whitfield: reading glasses, a pen, a leather journal... and a USB drive.\n\n\"That's mine!\" Sophia shouts. \"You took it during the blackout!\"\n\nWhitfield calmly shakes his head. \"This is my own drive. I've been writing a memoir. It has nothing to do with your father's theatrics.\"\n\nBut his hand is trembling. And when you look closely at the journal, you see a page with a single line: \"If he talks, we all fall.\"",
+      "sceneDescription": "A tense scene of all dinner guests emptying their pockets onto a table. Focus on a USB drive and an open journal with threatening handwriting.",
+      "choices": [
+        {
+          "id": "accuse-whitfield-2",
+          "emoji": "⚖️",
+          "label": "Whitfield killed Victor to keep Geneva secret",
+          "nextNodeId": "accuse-whitfield"
+        },
+        {
+          "id": "journal-clue",
+          "emoji": "📖",
+          "label": "\"We all fall\" — who is 'we'? Press him.",
+          "nextNodeId": "final-revelation"
+        }
+      ]
+    },
+
+    "motive-analysis": {
+      "id": "motive-analysis",
+      "type": "narrative",
+      "title": "The Web of Motives",
+      "narration": "You lay it all out. Every guest had a reason to want Victor dead:\n\n**Dr. Vasquez** — losing her research funding. Had syringes. Was near Victor before dinner.\n\n**Marcus Chen** — Victor stole $30M from him. But killing Victor makes recovery harder.\n\n**Lady Catherine** — bitter divorce, wants the diamond necklace she's wearing. Fingerprints on the wine glass.\n\n**Professor Whitfield** — connected to Geneva. Has been subtly directing suspicion. Loves Beethoven.\n\n**Sophia** — inherits everything. The perfect financial motive. But she wanted the truth out, not buried.\n\nAnd the **butler** — 32 years of loyalty, now crying in the pantry.\n\nVictor knew one of them would act. This dinner was his final test. Time to make your accusation.",
+      "sceneDescription": "A dramatic mental map of all suspects with their motives, connected by red string like a detective board. Each suspect's face illuminated by candlelight.",
+      "choices": [
+        {
+          "id": "final-elena",
+          "emoji": "👩‍⚕️",
+          "label": "Accuse Dr. Vasquez",
+          "nextNodeId": "accuse-elena"
+        },
+        {
+          "id": "final-whitfield",
+          "emoji": "🎓",
+          "label": "Accuse Professor Whitfield",
+          "nextNodeId": "accuse-whitfield"
+        },
+        {
+          "id": "final-catherine",
+          "emoji": "💎",
+          "label": "Accuse Lady Catherine",
+          "nextNodeId": "accuse-catherine"
+        }
+      ]
+    },
+
+    "final-revelation": {
+      "id": "final-revelation",
+      "type": "narrative",
+      "title": "Victor's Last Card",
+      "narration": "The envelope contains a single photograph and a typed letter.\n\nThe photograph shows four people at a clinic in Geneva: Dr. Vasquez, Professor Whitfield, a young Marcus Chen, and Victor Blackwood. They're smiling. Behind them, a sign reads \"NeuroVita Clinical Trials — Phase III.\"\n\nThe letter reads: \"If you're reading this, I'm dead. Good. I deserve it. In Geneva, we tested an experimental drug on 47 patients without proper consent. Twelve died. James covered it up. Elena falsified the medical records. Marcus laundered the settlement money. I funded it all. Catherine found out and I bought her silence with a marriage. Sophia was the only innocent one. She's the only one I trust to make this right.\"\n\nAt the bottom: \"The killer is the one who had the most to lose from the truth. Think carefully.\"\n\nAll eyes turn to you. Time for the final vote.",
+      "sceneDescription": "A dramatic reveal of an old photograph under candlelight. A typed confession letter. All guests staring at the reader with various expressions of fear and guilt.",
+      "choices": [
+        {
+          "id": "revelation-elena",
+          "emoji": "👩‍⚕️",
+          "label": "Dr. Vasquez — she falsified records, her career is over",
+          "nextNodeId": "accuse-elena"
+        },
+        {
+          "id": "revelation-whitfield",
+          "emoji": "🎓",
+          "label": "Professor Whitfield — he led the cover-up",
+          "nextNodeId": "accuse-whitfield"
+        },
+        {
+          "id": "revelation-marcus",
+          "emoji": "💰",
+          "label": "Marcus Chen — $30M in dirty money to protect",
+          "nextNodeId": "accuse-marcus"
+        }
+      ]
+    },
+
+    "accuse-elena": {
+      "id": "accuse-elena",
+      "type": "ending",
+      "title": "The Wrong Prescription",
+      "narration": "You accuse Dr. Vasquez. She protests, but the evidence seems damning — the syringes, the empty vial, her proximity to Victor.\n\nBut as the group closes in, the butler speaks. \"I'm afraid you've made an error.\"\n\nHe produces a security camera still from the hallway: Professor Whitfield entering the dining room alone, twenty minutes before dinner, carrying a small case.\n\n\"The good professor planted the vial in Elena's bag,\" the butler says quietly. \"Victor suspected James would try something. That's why he installed the cameras last week.\"\n\nWhitfield bolts for the door. He doesn't make it far — the doors are still locked.\n\n**The real killer is caught, but only because of backup evidence — not because of your deduction.** Dr. Vasquez's reputation will never fully recover from the accusation.\n\n🔍 You got close, but accused the wrong person.",
+      "endingType": "neutral",
+      "endingTitle": "Malpractice of Justice"
+    },
+
+    "accuse-whitfield": {
+      "id": "accuse-whitfield",
+      "type": "ending",
+      "title": "The Professor's Downfall",
+      "narration": "You point at Professor Whitfield. \"You led the Geneva cover-up. Victor was going to expose everything tonight. You had the most to lose — your reputation, your freedom, your legacy. You poisoned the wine AND planted the syringe evidence to frame Dr. Vasquez.\"\n\nThe room goes silent. Whitfield removes his glasses and polishes them slowly.\n\n\"Victor was my oldest friend,\" he says. \"And he was about to destroy us all. Not just me — Elena, Marcus, everyone in this room connected to Geneva. I did what I had to do.\"\n\n\"For yourself,\" Sophia says.\n\n\"For everyone.\" He sets his glasses on the table. \"But I suppose that's for a jury to decide.\"\n\nThe butler unlocks the front door. Blue lights are already flashing through the rain.\n\n**Justice served. You identified the real killer.** 🎯",
+      "endingType": "good",
+      "endingTitle": "Justice Served"
+    },
+
+    "accuse-catherine": {
+      "id": "accuse-catherine",
+      "type": "ending",
+      "title": "A Lady Scorned",
+      "narration": "You accuse Lady Catherine. Her fingerprints were on the glass. She knew Victor's habits. She had fifteen years of marriage worth of motive.\n\nCatherine laughs — a cold, crystalline sound. \"Darling, if I wanted Victor dead, I would have done it during the divorce. I had twelve chances and a very creative lawyer.\"\n\nShe's right, and deep down, you know it. Catherine is many things, but she's not a murderer.\n\nWhile the group argues about your accusation, Professor Whitfield quietly excuses himself to the bathroom. Twenty minutes later, the butler finds the bathroom window open and Whitfield gone — disappeared into the storm.\n\n**The killer escaped while you were chasing the wrong suspect.** The Geneva files will never surface. The truth dies with Victor.\n\n💀 The killer got away.",
+      "endingType": "bad",
+      "endingTitle": "The One That Got Away"
+    },
+
+    "accuse-marcus": {
+      "id": "accuse-marcus",
+      "type": "ending",
+      "title": "Follow the Money",
+      "narration": "You accuse Marcus Chen. The money trail, the lawsuit, the Geneva connection — it all points to him.\n\nMarcus turns white. \"You're making a terrible mistake. I didn't—\"\n\n\"Then explain the $30 million,\" you say.\n\n\"The money was my EXIT from Victor's world. I was building a case to expose him legally. His death RUINS my lawsuit. Why would I—\"\n\nA crash from the hallway. Everyone rushes out to find Professor Whitfield trying to force open a window, a packed briefcase in hand.\n\nThe butler tackles him. Inside the briefcase: a passport, $50,000 in cash, and a burner phone with a single text sent at 8:47 PM — three minutes before Victor's toast: \"It's done.\"\n\n**You accused the wrong person, but the real killer revealed himself trying to flee.** A lucky break.\n\n🍀 Right answer, wrong reasoning.",
+      "endingType": "neutral",
+      "endingTitle": "Stumbling Into Truth"
+    },
+
+    "accuse-both": {
+      "id": "accuse-both",
+      "type": "ending",
+      "title": "The Conspiracy Unravels",
+      "narration": "\"It wasn't one person,\" you announce. \"It was two. Professor Whitfield and Lady Catherine, working together.\"\n\nCatherine's smile freezes. Whitfield's hand tightens on his wine glass.\n\n\"Whitfield planned the murder to protect the Geneva secret. Catherine provided access — she knew Victor's habits, his special glass, the layout of the house. In return, Whitfield promised to destroy the evidence connecting her to the cover-up.\"\n\nYou turn to Catherine. \"That's why your fingerprints are on the glass. You didn't 'happen to move it' — you placed the poisoned glass at Victor's seat.\"\n\nThe silence stretches for an eternity. Then Catherine turns to Whitfield. \"I told you they'd figure it out.\"\n\nWhitfield slumps in his chair. \"We were protecting everyone—\"\n\n\"You were protecting yourselves,\" Sophia cuts in. She holds up her phone. \"And I've been recording everything.\"\n\n🏆 **Masterful deduction. Both conspirators identified.** The Geneva files will see the light of day.\n\nThis is the secret ending — only 12% of groups find it.",
+      "endingType": "secret",
+      "endingTitle": "The Full Truth"
+    }
+  }
+}
