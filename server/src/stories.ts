@@ -35,7 +35,7 @@ export interface StoryGraph {
 const stories = new Map<string, StoryGraph>();
 
 export function loadStories(): void {
-  const storiesDir = path.join(__dirname, "../../stories");
+  const storiesDir = process.env.NODE_ENV === "production" ? path.join(__dirname, "../stories") : path.join(__dirname, "../../stories");
 
   if (!fs.existsSync(storiesDir)) {
     console.warn(`Stories directory not found: ${storiesDir}`);
