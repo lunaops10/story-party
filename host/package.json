@@ -9,15 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "colyseus.js": "^0.15.25",
+    "colyseus.js": "^0.16.22",
+    "qrcode": "^1.5.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "qrcode": "^1.5.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@types/qrcode": "^1.5.5",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.7.3",
     "vite": "^6.1.0"

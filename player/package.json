@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "colyseus.js": "^0.15.25",
+    "colyseus.js": "^0.16.22",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
