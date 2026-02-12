@@ -1,4 +1,4 @@
-import { Schema, MapSchema, ArraySchema, type, filter } from "@colyseus/schema";
+import { Schema, MapSchema, ArraySchema, type } from "@colyseus/schema";
 
 export class ChoiceSchema extends Schema {
   @type("string") id: string = "";
