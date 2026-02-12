@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Client, Room } from "colyseus.js";
 import QRCode from "qrcode";
 
-const SERVER_URL = (import.meta as any).env?.VITE_SERVER_URL || "ws://localhost:2567";
-const PLAYER_URL = (import.meta as any).env?.VITE_PLAYER_URL || "http://localhost:3001";
+const SERVER_URL = "wss://story-party-server.fly.dev";
+const PLAYER_URL = "https://story-party-player.vercel.app";
 
 export default function App() {
   const [room, setRoom] = useState<Room | null>(null);
