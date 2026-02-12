@@ -120,7 +120,7 @@ export default function App() {
     return (
       <Screen>
         {currentTitle && <Text size="2rem" bold color="#c4b5fd" glow mb="1.5rem">{currentTitle}</Text>}
-        <Text size="1.4rem" lineHeight="2" style={{ maxWidth: 900, whiteSpace: "pre-line" }}>{currentNarration}</Text>
+        <Text size="1.2rem" lineHeight="1.8" style={{ maxWidth: 850, whiteSpace: "pre-line", padding: "0 2rem" }}>{currentNarration}</Text>
         <Text size="0.9rem" color="#4b5563" italic style={{ position: "absolute", bottom: "2rem" }}>
           VIP: tap "Continue" on your phone
         </Text>
@@ -208,7 +208,7 @@ function Screen({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
       width: "100vw", height: "100vh", display: "flex", flexDirection: "column",
-      alignItems: "center", justifyContent: "center", position: "relative",
+      alignItems: "center", justifyContent: "flex-start", position: "relative", paddingTop: "4rem", paddingBottom: "4rem", overflowY: "auto",
       background: "linear-gradient(180deg, #0a0a1a 0%, #1a0a2a 50%, #0a0a1a 100%)",
       fontFamily: "'Georgia','Times New Roman',serif", color: "#e8e8e8", overflow: "hidden",
     }}>
