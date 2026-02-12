@@ -29,7 +29,7 @@ export default function App() {
     const connect = async () => {
       try {
         const client = new Client(SERVER_URL);
-        const newRoom = await client.create("story_room");
+        const newRoom = await client.create("story_room", { isHost: true });
 
         newRoom.onStateChange((s: any) => {
           setPhase(s.phase);

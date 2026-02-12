@@ -25,7 +25,8 @@ function generateRoomCode(): string {
 
 export class StoryRoom extends Room<GameStateSchema> {
   private story: StoryGraph | null = null;
-  private votes: Map<string, string> = new Map(); // sessionId -> choiceId
+  private votes: Map<string, string> = new Map();
+  private hostSessionId: string | null = null; // sessionId -> choiceId
   private voteInterval: ReturnType<typeof setInterval> | null = null;
   private autoAdvanceTimeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -48,7 +49,14 @@ export class StoryRoom extends Room<GameStateSchema> {
     this.onMessage("restart", (client) => this.handleRestart(client));
   }
 
-  onJoin(client: Client, options: { name?: string; avatar?: string }) {
+  onJoin(client: Client, options: any) {
+    // Host screen joins with isHost flag - don't create a player
+    if (options.isHost) {
+      this.hostSessionId = client.sessionId;
+      console.log(`📺 Host screen connected to room ${this.state.roomCode}`);
+      return;
+    }
+
     const player = new PlayerSchema();
     player.sessionId = client.sessionId;
     player.name = options.name || `Player ${this.state.playerCount + 1}`;
